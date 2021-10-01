@@ -3,7 +3,8 @@ const discord= require('discord.js');
 const client= new discord.Client({ intents: [discord.Intents.FLAGS.GUILDS] });
 
 client.once('ready', () => {
-    console.log("ready!")
+    console.log(`[BOT] I'm ready! Logged in as ${client.user.tag}`);
+    console.log(`Creation Date: ${client.user.createdAt}`);
 })
 
 client.on('interactionCreate', async interaction => {
@@ -17,6 +18,8 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
 	} else if (commandName === 'user') {
 		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
+	} else if (commandName === 'hello') {
+		await interaction.reply(`Hi ${interaction.user.tag}`);
 	}
 });
 
