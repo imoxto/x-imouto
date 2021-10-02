@@ -1,11 +1,24 @@
 require('dotenv').config();
 const discord= require('discord.js');
-const client= new discord.Client({ intents: [discord.Intents.FLAGS.GUILDS] });
+const client= new discord.Client({ 
+	intents: [
+		discord.Intents.FLAGS.GUILDS,
+		discord.Intents.FLAGS.GUILD_MESSAGES
+	]
+});
 
 client.once('ready', () => {
     console.log(`[BOT] I'm ready! Logged in as ${client.user.tag}`);
     console.log(`Creation Date: ${client.user.createdAt}`);
 })
+
+client.on('messageCreate',  message => {
+	if (message.content==='ping') {
+		message.reply({
+			content:'pong'
+		});
+	}
+});
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
