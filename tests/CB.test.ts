@@ -4,7 +4,7 @@ describe('CB', () => {
 	const cb = new CB();
 	const cb1 = new CB(1);
 	const cb2 = new CB([1, 1, 1, 1, 1]);
-	test('constructor should give proper rounds', () => {
+	test('constructor() sets proper rounds', () => {
 		expect(cb.rounds).toStrictEqual([1, 1, 1, 1, 1]);
 		expect(cb.tier).toStrictEqual(1);
 		expect(cb.boss).toStrictEqual([
@@ -18,12 +18,12 @@ describe('CB', () => {
 		expect(cb2).toStrictEqual(cb);
 	});
 
-	test('adjustRounds should give proper rounds', () => {
+	test('adjustRounds() sets proper rounds', () => {
 		cb.adjustRounds();
 		expect(cb2).toStrictEqual(cb);
 	});
 
-	test('should throw error', () => {
+	test('should throw error on incorrect constructor', () => {
 		try {
 			new CB([1, 2, 4, 3, 2]);
 		} catch (error) {
