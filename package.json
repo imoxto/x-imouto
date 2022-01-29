@@ -9,7 +9,8 @@
     "start:watch": "nodemon dist/index.js",
     "build": "tsc",
     "build:watch": "tsc -w",
-    "dev": "concurrently \"npm:start:watch\" \"npm:build:watch\""
+    "dev": "concurrently \"npm:start:watch\" \"npm:build:watch\"",
+    "deployCommands": "node dist/deployCommands.js"
   },
   "keywords": [],
   "author": "",
@@ -19,11 +20,11 @@
     "url": "https://github.com/xImouto/x-imouto.git"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.11.0",
-    "@discordjs/rest": "^0.2.0-canary.0",
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
-    "dotenv": "^14.2.0"
+    "dotenv": "^14.3.2"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

@@ -1,6 +1,7 @@
-.env
 node_modules
-config
-src/deployCommands.ts
-sandbox.js
 dist
+
+.env
+config
+
+sandbox.js

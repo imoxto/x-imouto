@@ -24,7 +24,7 @@ class CB {
 	adjustRounds(rounds: number[] | number = 1) {
 		if (Array.isArray(rounds)) {
 			if (rounds.length !== 5) throw new Error('Rounds cannot be greater or less than 5!');
-			if (Math.max(...this.rounds) - Math.min(...this.rounds) > 2)
+			if (Math.max(...rounds) - Math.min(...rounds) > 2)
 				throw new Error('Difference between rounds cannot be greater than 2!');
 			this.rounds = rounds;
 		} else {
@@ -48,8 +48,5 @@ class CB {
 		});
 	}
 }
-
-const cb = new CB();
-console.log(cb);
 
 export default CB;
