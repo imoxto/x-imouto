@@ -21,7 +21,7 @@ client.on('interactionCreate', async (interaction) => {
 	const { commandName } = interaction;
 
 	if (commandName === 'ping') {
-		await interaction.reply('Pong!');
+		await interaction.reply({ ephemeral: true, content: 'Pong!' });
 	} else if (commandName === 'server' && interaction.guild) {
 		await interaction.reply(
 			`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`
