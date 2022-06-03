@@ -1,7 +1,7 @@
 {
   "name": "x-imouto-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A bot for playing with the discord api",
   "main": "/dist/index.ts",
   "scripts": {
     "test": "jest",
@@ -9,7 +9,7 @@
     "start:watch": "nodemon dist/index.js",
     "build": "tsc",
     "build:watch": "tsc -w",
-    "dev": "concurrently \"npm:start:watch\" \"npm:build:watch\"",
+    "dev": "concurrently \"npm:build:watch\" \"npm:start:watch\" --names \"tsc,node\" -c \"blue,green\"",
     "deployCommands": "node dist/deployCommands.js"
   },
   "keywords": [],
@@ -20,23 +20,31 @@
     "url": "https://github.com/xImouto/x-imouto.git"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.12.0",
-    "@discordjs/rest": "^0.3.0",
-    "discord-api-types": "^0.26.1",
-    "discord.js": "^13.6.0",
-    "dotenv": "^14.3.2"
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.33.2",
+    "discord.js": "^13.7.0",
+    "dotenv": "^16.0.1"
   },
   "devDependencies": {
-    "@types/jest": "^27.4.0",
-    "@types/node": "^17.0.10",
-    "jest" : "^27.4.7",
-    "prettier": "^2.5.1",
-    "nodemon": "^2.0.15",
-    "concurrently" : "^7.0.0",
-    "ts-jest": "^27.1.3"
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "concurrently": "^7.2.1",
+    "eslint": "^8.16.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.4.6",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.3"
   },
   "engines": {
-    "npm": "8.1.2",
-    "node": "16.13.2"
+    "npm": "8.11.0",
+    "node": "v16.13.2"
   }
 }
